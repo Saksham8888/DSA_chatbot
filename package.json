@@ -1,0 +1,17 @@
+{
+  "name": "ml_env",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "main": "DSA.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@google/genai": "^1.44.0",
+    "groq-sdk": "^0.37.0",
+    "readline-sync": "^1.4.10"
+  }
+}

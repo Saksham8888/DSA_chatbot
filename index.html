@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA Bot</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="modal-overlay" id="apiModal">
+      <div class="modal">
+        <div style="font-size: 32px; margin-bottom: 12px">🔑</div>
+        <h3>Enter Your Groq API Key</h3>
+        <p>
+          Get your free API key from
+          <a href="https://console.groq.com" target="_blank"
+            >console.groq.com</a
+          >
+        </p>
+        <input type="password" id="apiKeyInput" placeholder="gsk_..." />
+        <button class="modal-btn" onclick="saveApiKey()">
+          Start Chatting →
+        </button>
+      </div>
+    </div>
+
+    <div class="app">
+      <header>
+        <div class="logo">
+          <div class="logo-icon">🧠</div>
+          <div>
+            <div class="logo-text">DSA Bot</div>
+            <div class="logo-sub">Algorithm Instructor</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px">
+          <button class="clear-btn" onclick="clearChat()">Clear</button>
+          <div class="status">
+            <div class="status-dot"></div>
+            ONLINE
+          </div>
+        </div>
+      </header>
+
+      <div class="messages" id="messages">
+        <div class="welcome" id="welcome">
+          <div class="welcome-icon">⚡</div>
+          <h2>Ask me anything DSA</h2>
+          <p>
+            Your personal DSA tutor — arrays, trees, graphs, sorting, DP and
+            more!
+          </p>
+          <div class="suggestions">
+            <button class="suggestion" onclick="useSuggestion(this)">
+              What is a Binary Search Tree?
+            </button>
+            <button class="suggestion" onclick="useSuggestion(this)">
+              Explain Quick Sort
+            </button>
+            <button class="suggestion" onclick="useSuggestion(this)">
+              How does Dijkstra work?
+            </button>
+            <button class="suggestion" onclick="useSuggestion(this)">
+              What is Dynamic Programming?
+            </button>
+            <button class="suggestion" onclick="useSuggestion(this)">
+              Explain Big O Notation
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-area">
+        <div class="input-row">
+          <textarea
+            id="userInput"
+            placeholder="Ask a DSA question..."
+            rows="1"
+            onkeydown="handleKey(event)"
+            oninput="autoResize(this)"
+          ></textarea>
+          <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+            ➤
+          </button>
+        </div>
+        <div class="input-hint">ENTER to send · SHIFT+ENTER for new line</div>
+      </div>
+    </div>
+
+    <script src="DSA.js"></script>
+  </body>
+</html>
